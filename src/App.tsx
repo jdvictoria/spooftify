@@ -1,22 +1,24 @@
 import React from 'react';
+import styled from "styled-components";
+import {Container} from "@mui/joy";
+
+const AppContainer = styled(Container)`
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center; // vertical
+  align-items: center; // horizontal
+  
+  max-width: 100%;
+  height: 100vh;
+  
+  background-color: red;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer maxWidth={false}>
+    </AppContainer>
   );
 }
 
