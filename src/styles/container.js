@@ -11,3 +11,12 @@ export const StyledDiv = styled.div`
   
   background-color: #000000;
 `;
+
+export const CenterButtons = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+`
