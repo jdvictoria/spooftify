@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
-export const PlayerButton = styled.img`
-
+export const StyledButton = styled.img`
+  margin-left: 10px;
+  margin-right: 10px;
 `

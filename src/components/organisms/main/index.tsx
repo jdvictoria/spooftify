@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {StyledDiv} from "../../styles/container";
+import {StyledDiv} from "../../../styles/container";
 
 export const Nav = styled.div`
   display: flex;

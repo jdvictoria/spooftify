@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
-import {Player} from "./components/player";
-import {Main} from "./components/main";
+import {Player} from "./components/organisms/player";
+import {Main} from "./components/organisms/main";
 
 const AppContainer = styled.div`
   width: 100vw;
