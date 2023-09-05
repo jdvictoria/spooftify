@@ -9,7 +9,7 @@ const AppContainer = styled.div`
 `;
 
 function App() {
-  const [isLocal, setIsLocal] = useState(false);
+  const [isLocal, setIsLocal] = useState(true);
 
   return (
     <AppContainer>
