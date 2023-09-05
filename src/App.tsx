@@ -38,15 +38,50 @@ export const Footer = styled.div`
 export const Nav = styled.div`
   display: flex;
   position: relative;
+  flex-direction: column;
 
   width: 20%;
   height: 100%;
   
   justify-content: center;
+  align-items: flex-end;
+  
+  background-color: #000000;
+`;
+
+export const NavSmallCard = styled.div`
+  display: flex;
+  position: relative;
+
+  width: 97.5%;
+  height: 18.5%;
+  
+  justify-content: center;
   align-items: center;
   
-  background-color: green;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  
+  border-radius: 10px;
+  background-color: #121212;
 `;
+
+export const NavBigCard = styled.div`
+  display: flex;
+  position: relative;
+
+  width: 97.5%;
+  height: 80%;
+  
+  justify-content: center;
+  align-items: center;
+  
+  margin-top: 4px;
+  
+  border-radius: 10px;
+  background-color: #121212;
+`;
+
 
 export const Home = styled.div`
   position: relative;
@@ -60,13 +95,14 @@ export const Home = styled.div`
   background-color: yellow;
 `;
 
-
-
 function App() {
   return (
     <AppContainer>
       <Body>
-          <Nav/>
+          <Nav>
+              <NavSmallCard/>
+              <NavBigCard/>
+          </Nav>
           <Home/>
       </Body>
       <Footer>
