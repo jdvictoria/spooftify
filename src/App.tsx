@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components";
+import {Player} from "./components/player";
 
 const isRunLocal = false;
 
@@ -20,19 +21,6 @@ export const Body = styled.div`
   align-items: center;
   
   background-color: red;
-`;
-
-export const Footer = styled.div`
-  display: flex;
-  position: relative;
-
-  width: 100%;
-  height: ${isRunLocal ? '12.5% ': '15%'};
-  
-  justify-content: center;
-  align-items: center;
-  
-  background-color: #000000;
 `;
 
 export const Nav = styled.div`
@@ -113,6 +101,8 @@ export const HomeCard = styled.div`
 `;
 
 function App() {
+  const [isLocal, setIsLocal] = useState(false);
+  
   return (
     <AppContainer>
       <Body>
@@ -124,9 +114,7 @@ function App() {
               <HomeCard/>
           </Home>
       </Body>
-      <Footer>
-
-      </Footer>
+      <Player isLocal={isLocal}/>
     </AppContainer>
   );
 }
