@@ -84,15 +84,32 @@ export const NavBigCard = styled.div`
 
 
 export const Home = styled.div`
+  display: flex;
   position: relative;
   
   width: 80%;
   height: 100%;
   
   justify-content: center;
+  align-items: flex-end;
+  
+  background-color: #000000;
+`;
+
+export const HomeCard = styled.div`
+  display: flex;
+  position: relative;
+
+  width: 98.5%;
+  height: 98.5%;
+  
+  justify-content: center;
   align-items: center;
   
-  background-color: yellow;
+  margin-top: 4px;
+  
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #4e4c42, #121212);
 `;
 
 function App() {
@@ -103,7 +120,9 @@ function App() {
               <NavSmallCard/>
               <NavBigCard/>
           </Nav>
-          <Home/>
+          <Home>
+              <HomeCard/>
+          </Home>
       </Body>
       <Footer>
 
