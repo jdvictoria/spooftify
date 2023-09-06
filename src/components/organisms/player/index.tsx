@@ -7,7 +7,7 @@ import styled from "styled-components";
 export const CenterNav = styled.div`
   flex-direction: column;
 
-  width: 33%;
+  min-width: 33%;
   height: 100%;
   
   justify-content: center;
@@ -26,9 +26,7 @@ export function Player(props: {isLocal: boolean}){
                    <PlayerButton meta={'repeat'}/>
                </CenterButtonsGrid>
                <CenterProgressGrid>
-                   <LinearProgress determinate color='neutral' value={75} sx={{
-                       "--LinearProgress-thickness": "3.5px",
-                   }}/>
+                   <LinearProgress determinate color='neutral' value={75} size='sm'/>
                </CenterProgressGrid>
            </CenterNav>
        </StyledDiv>

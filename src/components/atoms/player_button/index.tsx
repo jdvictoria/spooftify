@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Tooltip} from "@mui/joy";
 import {StyledButton} from "../../../styles/buttons";
 
 import PrevNormal from '../../../assets/icons/prev_normal.svg';
@@ -21,6 +22,7 @@ import ShuffleHover from '../../../assets/icons/shuffle_hover.svg';
 import ShuffleClicked from '../../../assets/icons/shuffle_clicked.svg';
 import ShuffleClickedHover from '../../../assets/icons/shuffle_clicked_hover.svg'
 
+
 export function PlayerButton(props: {meta: string}){
     const [isHovered, setIsHovered] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
@@ -30,29 +32,41 @@ export function PlayerButton(props: {meta: string}){
     };
 
     let imageSource;
+    let titleSource;
 
     if (props.meta === 'play') {
         imageSource = isClicked ? (isHovered ? PauseHover : PauseNormal) : (isHovered ? PlayHover : PlayNormal);
+        titleSource = isClicked ? "Pause" : "Play";
     } else if (props.meta === 'prev') {
         imageSource = isHovered ? PrevHover : PrevNormal;
+        titleSource = "Previous";
     } else if (props.meta === 'next') {
         imageSource = isHovered ? NextHover : NextNormal;
+        titleSource = "Next";
     } else if (props.meta === 'shuffle') {
         imageSource = isClicked ? (isHovered ? ShuffleClickedHover : ShuffleClicked) : (isHovered ? ShuffleHover : ShuffleNormal);
+        titleSource = isClicked ? "Disable Shuffle" : "Enable Shuffle";
     } else if (props.meta === 'repeat') {
         imageSource = isClicked ? (isHovered ? RepeatClickedHover : RepeatClicked) : (isHovered ? RepeatHover : RepeatNormal);
+        titleSource = isClicked ? "Disable Repeat" : "Enable Repeat";
     }
 
     return(
-        <StyledButton
-            src={imageSource}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onClick={handleClick}
-            style={{
-                height: props.meta === 'play' ? '8%' : '5%',
-                width: props.meta === 'play' ? '8%' : '5%'
-            }}
-        />
+        <Tooltip
+            title={titleSource}
+            placement="top"
+            size="sm"
+            variant="soft">
+            <StyledButton
+                src={imageSource}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                onClick={handleClick}
+                style={{
+                    maxHeight: props.meta === 'play' ? '40px' : '25px',
+                    maxWidth: props.meta === 'play' ? '40px' : '25px'
+                }}
+            />
+        </Tooltip>
     )
 }
