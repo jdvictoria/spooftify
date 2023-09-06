@@ -7,12 +7,21 @@ import styled from "styled-components";
 export const CenterNav = styled.div`
   flex-direction: column;
 
-  min-width: 33%;
+  min-width: 37.5%;
   height: 100%;
   
   justify-content: center;
   align-items: center;
 `;
+
+export const ProgressTimer = styled.span`
+  color: #999999;
+  font-size: 12px;
+  font-family: "Circular Book",sans-serif;
+  
+  margin-right: 10px;
+  margin-left: 10px;
+`
 
 export function Player(props: {isLocal: boolean}){
     return(
@@ -26,7 +35,13 @@ export function Player(props: {isLocal: boolean}){
                    <PlayerButton meta={'repeat'}/>
                </CenterButtonsGrid>
                <CenterProgressGrid>
+                   <ProgressTimer>
+                       0:00
+                   </ProgressTimer>
                    <LinearProgress determinate color='neutral' value={75} size='sm'/>
+                   <ProgressTimer>
+                       0:00
+                   </ProgressTimer>
                </CenterProgressGrid>
            </CenterNav>
        </StyledDiv>

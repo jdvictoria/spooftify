@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
+import styled from "styled-components";
 import {Tooltip} from "@mui/joy";
-import {StyledButton} from "../../../styles/buttons";
 
 import PrevNormal from '../../../assets/icons/prev_normal.svg';
 import PrevHover from '../../../assets/icons/prev_hover.svg';
@@ -22,6 +22,7 @@ import ShuffleHover from '../../../assets/icons/shuffle_hover.svg';
 import ShuffleClicked from '../../../assets/icons/shuffle_clicked.svg';
 import ShuffleClickedHover from '../../../assets/icons/shuffle_clicked_hover.svg'
 
+export const StyledButton = styled.img``;
 
 export function PlayerButton(props: {meta: string}){
     const [isHovered, setIsHovered] = useState(false);
@@ -63,6 +64,8 @@ export function PlayerButton(props: {meta: string}){
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={handleClick}
                 style={{
+                    marginLeft: 10,
+                    marginRight: 10,
                     maxHeight: props.meta === 'play' ? '40px' : '25px',
                     maxWidth: props.meta === 'play' ? '40px' : '25px'
                 }}

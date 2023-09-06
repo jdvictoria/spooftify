@@ -18,7 +18,7 @@ export const CenterButtonsGrid = styled.div`
   flex-direction: row;
 
   margin-top: 12.5px;
-  margin-bottom: 12.5px;
+  margin-bottom: 6.25px;
   
   justify-content: center;
   align-items: center;
