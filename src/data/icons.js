@@ -28,33 +28,43 @@ export const ShuffleIcon = {
     normal: ShuffleNormal,
     normal_hover: ShuffleHover,
     click: ShuffleClicked,
-    click_hover: ShuffleClickedHover
+    click_hover: ShuffleClickedHover,
+    title: "Enable Shuffle",
+    altTitle: "Disable Shuffle"
 }
 
 export const PrevIcon = {
     normal: PrevNormal,
     normal_hover: PrevHover,
     click: null,
-    click_hover: null
+    click_hover: null,
+    title: "Previous",
+    altTitle: null
 }
 
 export const PlayIcon = {
     normal: PlayNormal,
     normal_hover: PlayHover,
     click: PlayClicked,
-    click_hover: PlayClickedHover
+    click_hover: PlayClickedHover,
+    title: "Play",
+    altTitle: "Pause"
 }
 
 export const NextIcon = {
     normal: NextNormal,
     normal_hover: NextHover,
     click: null,
-    click_hover: null
+    click_hover: null,
+    title: "Next",
+    altTitle: null
 }
 
 export const RepeatIcon = {
     normal: RepeatNormal,
     normal_hover: RepeatHover,
     click: RepeatClicked,
-    click_hover: RepeatClickedHover
+    click_hover: RepeatClickedHover,
+    title: "Enable Repeat",
+    altTitle: "Disable Repeat"
 }

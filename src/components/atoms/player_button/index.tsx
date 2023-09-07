@@ -25,19 +25,19 @@ export function PlayerButton(props: {meta: string}){
 
     if (props.meta === 'play') {
         imageSource = isClicked ? (isHovered ? PlayIcon.click_hover : PlayIcon.click) : (isHovered ? PlayIcon.normal_hover : PlayIcon.normal);
-        titleSource = isClicked ? "Pause" : "Play";
+        titleSource = isClicked ? PlayIcon.altTitle : PlayIcon.title;
     } else if (props.meta === 'prev') {
         imageSource = isHovered ? PrevIcon.normal_hover : PrevIcon.normal;
-        titleSource = "Previous";
+        titleSource = isClicked ? PrevIcon.altTitle : PrevIcon.title;
     } else if (props.meta === 'next') {
         imageSource = isHovered ? NextIcon.normal_hover : NextIcon.normal;
-        titleSource = "Next";
+        titleSource = isClicked ? NextIcon.altTitle : NextIcon.title;
     } else if (props.meta === 'shuffle') {
         imageSource = isClicked ? (isHovered ? ShuffleIcon.click_hover : ShuffleIcon.click) : (isHovered ? ShuffleIcon.normal_hover : ShuffleIcon.normal);
-        titleSource = isClicked ? "Disable Shuffle" : "Enable Shuffle";
+        titleSource = isClicked ? ShuffleIcon.altTitle : ShuffleIcon.title;
     } else if (props.meta === 'repeat') {
         imageSource = isClicked ? (isHovered ? RepeatIcon.click_hover : RepeatIcon.click) : (isHovered ? RepeatIcon.normal_hover : RepeatIcon.normal);
-        titleSource = isClicked ? "Disable Repeat" : "Enable Repeat";
+        titleSource = isClicked ? RepeatIcon.altTitle : RepeatIcon.title;
     }
 
     return(
