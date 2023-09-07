@@ -4,10 +4,8 @@ import {Tooltip} from "@mui/joy";
 
 import {
     iconMappings,
-    ShuffleIcon,
     PrevIcon,
     NextIcon,
-    RepeatIcon
 } from "../../../data/icons";
 
 export const StyledButton = styled.img``;
