@@ -1,5 +1,5 @@
 import React from 'react';
-import {CenterProgressGrid, CenterButtonsGrid, StyledDiv} from "../../../styles/container";
+import {CenterProgressGrid, CenterButtonsGrid, StyledDiv, RightButtonsGrid} from "../../../styles/container";
 import {PlayerButton} from "../../atoms/player_button";
 import {LinearProgress} from "@mui/joy";
 import styled from "styled-components";
@@ -8,6 +8,18 @@ export const CenterNav = styled.div`
   flex-direction: column;
 
   min-width: 37.5%;
+  height: 100%;
+  
+  justify-content: center;
+  align-items: center;
+`;
+
+export const RightNav = styled.div`
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+
+  right: 5px;
   height: 100%;
   
   justify-content: center;
@@ -25,7 +37,7 @@ export const ProgressTimer = styled.span`
 
 export function Player(props: {isLocal: boolean}){
     return(
-       <StyledDiv style={{height: props.isLocal ? '12.5% ': '15%'}}>
+       <StyledDiv style={{height: props.isLocal ? '12.5% ': '15%', flexDirection: 'row'}}>
            <CenterNav>
                <CenterButtonsGrid>
                    <PlayerButton meta={'shuffle'}/>
@@ -44,6 +56,11 @@ export function Player(props: {isLocal: boolean}){
                    </ProgressTimer>
                </CenterProgressGrid>
            </CenterNav>
+           <RightNav>
+               <RightButtonsGrid>
+                   <PlayerButton meta={'full'}/>
+               </RightButtonsGrid>
+           </RightNav>
        </StyledDiv>
     )
 }

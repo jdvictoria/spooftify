@@ -2,25 +2,13 @@ import React, {useState} from 'react';
 import styled from "styled-components";
 import {Tooltip} from "@mui/joy";
 
-import PrevNormal from '../../../assets/icons/prev_normal.svg';
-import PrevHover from '../../../assets/icons/prev_hover.svg';
-import NextNormal from '../../../assets/icons/next_normal.svg';
-import NextHover from '../../../assets/icons/next_hover.svg'
-
-import PauseNormal from '../../../assets/icons/pause_normal.svg';
-import PauseHover from '../../../assets/icons/pause_hover.svg';
-import PlayNormal from '../../../assets/icons/play_normal.svg';
-import PlayHover from '../../../assets/icons/play_hover.svg';
-
-import RepeatNormal from '../../../assets/icons/repeat_normal.svg';
-import RepeatHover from '../../../assets/icons/repeat_hover.svg';
-import RepeatClicked from '../../../assets/icons/repeat_clicked.svg';
-import RepeatClickedHover from '../../../assets/icons/repeat_clicked_hover.svg'
-
-import ShuffleNormal from '../../../assets/icons/shuffle_normal.svg';
-import ShuffleHover from '../../../assets/icons/shuffle_hover.svg';
-import ShuffleClicked from '../../../assets/icons/shuffle_clicked.svg';
-import ShuffleClickedHover from '../../../assets/icons/shuffle_clicked_hover.svg'
+import {
+    ShuffleIcon,
+    PrevIcon,
+    PlayIcon,
+    NextIcon,
+    RepeatIcon
+} from "../../../data/icons";
 
 export const StyledButton = styled.img``;
 
@@ -36,19 +24,19 @@ export function PlayerButton(props: {meta: string}){
     let titleSource;
 
     if (props.meta === 'play') {
-        imageSource = isClicked ? (isHovered ? PauseHover : PauseNormal) : (isHovered ? PlayHover : PlayNormal);
+        imageSource = isClicked ? (isHovered ? PlayIcon.click_hover : PlayIcon.click) : (isHovered ? PlayIcon.normal_hover : PlayIcon.normal);
         titleSource = isClicked ? "Pause" : "Play";
     } else if (props.meta === 'prev') {
-        imageSource = isHovered ? PrevHover : PrevNormal;
+        imageSource = isHovered ? PrevIcon.normal_hover : PrevIcon.normal;
         titleSource = "Previous";
     } else if (props.meta === 'next') {
-        imageSource = isHovered ? NextHover : NextNormal;
+        imageSource = isHovered ? NextIcon.normal_hover : NextIcon.normal;
         titleSource = "Next";
     } else if (props.meta === 'shuffle') {
-        imageSource = isClicked ? (isHovered ? ShuffleClickedHover : ShuffleClicked) : (isHovered ? ShuffleHover : ShuffleNormal);
+        imageSource = isClicked ? (isHovered ? ShuffleIcon.click_hover : ShuffleIcon.click) : (isHovered ? ShuffleIcon.normal_hover : ShuffleIcon.normal);
         titleSource = isClicked ? "Disable Shuffle" : "Enable Shuffle";
     } else if (props.meta === 'repeat') {
-        imageSource = isClicked ? (isHovered ? RepeatClickedHover : RepeatClicked) : (isHovered ? RepeatHover : RepeatNormal);
+        imageSource = isClicked ? (isHovered ? RepeatIcon.click_hover : RepeatIcon.click) : (isHovered ? RepeatIcon.normal_hover : RepeatIcon.normal);
         titleSource = isClicked ? "Disable Repeat" : "Enable Repeat";
     }
 
