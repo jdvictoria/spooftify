@@ -40,8 +40,8 @@ export function PlayerButton(props: {meta: string}){
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={handleClick}
                 style={{
-                    marginLeft: 7.5,
-                    marginRight: 7.5,
+                    marginLeft: 6.75,
+                    marginRight: 6.75,
                     maxHeight: props.meta === 'play' ? '40px' : '25px',
                     maxWidth: props.meta === 'play' ? '40px' : '25px'
                 }}

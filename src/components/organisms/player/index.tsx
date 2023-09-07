@@ -19,7 +19,7 @@ export const RightNav = styled.div`
   position: absolute;
   flex-direction: row;
 
-  right: 5px;
+  right: 2.5px;
   height: 100%;
   
   justify-content: center;
