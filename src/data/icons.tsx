@@ -24,24 +24,6 @@ import RepeatHover from '../assets/icons/repeat_hover.svg';
 import RepeatClicked from '../assets/icons/repeat_clicked.svg';
 import RepeatClickedHover from '../assets/icons/repeat_clicked_hover.svg'
 
-export const PrevIcon = {
-    normal: PrevNormal,
-    normal_hover: PrevHover,
-    click: null,
-    click_hover: null,
-    title: "Previous",
-    altTitle: null
-}
-
-export const NextIcon = {
-    normal: NextNormal,
-    normal_hover: NextHover,
-    click: null,
-    click_hover: null,
-    title: "Next",
-    altTitle: null
-}
-
 interface IconMapping {
     normal?: string;
     normal_hover?: string;
@@ -60,6 +42,14 @@ export const iconMappings: Record<string, IconMapping> = {
         title: "Enable Shuffle",
         altTitle: "Disable Shuffle"
     },
+    prev: {
+        normal: PrevNormal,
+        normal_hover: PrevHover,
+        click: PrevNormal,
+        click_hover: PrevHover,
+        title: "Previous",
+        altTitle: undefined
+    },
     play: {
         normal: PlayNormal,
         normal_hover: PlayHover,
@@ -67,6 +57,14 @@ export const iconMappings: Record<string, IconMapping> = {
         click_hover: PlayClickedHover,
         title: "Play",
         altTitle: "Pause"
+    },
+    next: {
+        normal: NextNormal,
+        normal_hover: NextHover,
+        click: NextNormal,
+        click_hover: NextHover,
+        title: "Next",
+        altTitle: undefined
     },
     repeat: {
         normal: RepeatNormal,

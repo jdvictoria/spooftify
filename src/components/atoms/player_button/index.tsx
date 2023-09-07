@@ -1,12 +1,7 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
 import {Tooltip} from "@mui/joy";
-
-import {
-    iconMappings,
-    PrevIcon,
-    NextIcon,
-} from "../../../data/icons";
+import {iconMappings} from "../../../data/icons";
 
 export const StyledButton = styled.img``;
 
@@ -27,12 +22,11 @@ export function PlayerButton(props: {meta: string}){
         altTitle,
     } = iconMappings[props.meta] || {};
 
-    if (!normal || !normal_hover) {
-        return null;
-    }
-
-    const imageSource = isClicked ? (isHovered ? click_hover : click) : (isHovered ? normal_hover : normal);
-    const titleSource = isClicked ? altTitle || title : title;
+    const imageSource =
+        isClicked ? (isHovered ? click_hover : click)
+            : (isHovered ? normal_hover : normal);
+    const titleSource =
+        isClicked ? altTitle || title : title;
 
     return(
         <Tooltip
