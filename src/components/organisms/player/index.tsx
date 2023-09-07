@@ -58,6 +58,10 @@ export function Player(props: {isLocal: boolean}){
            </CenterNav>
            <RightNav>
                <RightButtonsGrid>
+                   <PlayerButton meta={'lyrics'}/>
+                   <PlayerButton meta={'queue'}/>
+                   <PlayerButton meta={'devices'}/>
+                   <PlayerButton meta={'volume'}/>
                    <PlayerButton meta={'full'}/>
                </RightButtonsGrid>
            </RightNav>

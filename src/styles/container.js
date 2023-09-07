@@ -37,7 +37,7 @@ export const CenterProgressGrid = styled.div`
 export const RightButtonsGrid = styled.div`
   display: flex;
   position: relative;
-  flex-direction: row-reverse;
+  flex-direction: row;
 
   justify-content: center;
   align-items: center;

@@ -16,13 +16,37 @@ import PlayClickedHover from '../assets/icons/pause_hover.svg';
 
 // Next
 import NextNormal from '../assets/icons/next_normal.svg';
-import NextHover from '../assets/icons/next_hover.svg'
+import NextHover from '../assets/icons/next_hover.svg';
 
 // Repeat
 import RepeatNormal from '../assets/icons/repeat_normal.svg';
 import RepeatHover from '../assets/icons/repeat_hover.svg';
 import RepeatClicked from '../assets/icons/repeat_clicked.svg';
-import RepeatClickedHover from '../assets/icons/repeat_clicked_hover.svg'
+import RepeatClickedHover from '../assets/icons/repeat_clicked_hover.svg';
+
+// Lyrics
+import LyricsNormal from '../assets/icons/lyrics_normal.svg';
+import LyricsHover from '../assets/icons/lyrics_hover.svg';
+import LyricsClicked from '../assets/icons/lyrics_clicked.svg';
+import LyricsClickedHover from '../assets/icons/lyrics_clicked_hover.svg';
+
+// Queue
+import QueueNormal from '../assets/icons/queue_normal.svg';
+import QueueHover from '../assets/icons/queue_hover.svg';
+import QueueClicked from '../assets/icons/queue_clicked.svg';
+import QueueClickedHover from '../assets/icons/queue_clicked_hover.svg';
+
+// Devices
+import DevicesNormal from '../assets/icons/devices_normal.svg';
+import DevicesHover from '../assets/icons/devices_hover.svg'
+
+// Volume
+import VolumeNormal from '../assets/icons/volume_normal.svg';
+import VolumeHover from '../assets/icons/volume_hover.svg';
+
+// Fullscreen
+import FullNormal from '../assets/icons/fullscreen_normal.svg';
+import FullHover from '../assets/icons/fullscreen_hover.svg'
 
 interface IconMapping {
     normal?: string;
@@ -73,5 +97,45 @@ export const iconMappings: Record<string, IconMapping> = {
         click_hover: RepeatClickedHover,
         title: "Enable Repeat",
         altTitle: "Disable Repeat"
-    }
+    },
+    lyrics: {
+        normal: LyricsNormal,
+        normal_hover: LyricsHover,
+        click: LyricsClicked,
+        click_hover: LyricsClickedHover,
+        title: "Lyrics",
+        altTitle: "Lyrics"
+    },
+    queue: {
+        normal: QueueNormal,
+        normal_hover: QueueHover,
+        click: QueueClicked,
+        click_hover: QueueClickedHover,
+        title: "Queue",
+        altTitle: "Queue"
+    },
+    devices: {
+        normal: DevicesNormal,
+        normal_hover: DevicesHover,
+        click: DevicesNormal,
+        click_hover: DevicesHover,
+        title: "Connect to a device",
+        altTitle: undefined
+    },
+    volume: {
+        normal: VolumeNormal,
+        normal_hover: VolumeHover,
+        click: VolumeNormal,
+        click_hover: VolumeHover,
+        title: "Mute",
+        altTitle: "Unmute"
+    },
+    full: {
+        normal: FullNormal,
+        normal_hover: FullHover,
+        click: FullNormal,
+        click_hover: FullHover,
+        title: "Full screen",
+        altTitle: undefined
+    },
 };
