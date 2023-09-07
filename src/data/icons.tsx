@@ -42,15 +42,6 @@ export const PrevIcon = {
     altTitle: null
 }
 
-export const PlayIcon = {
-    normal: PlayNormal,
-    normal_hover: PlayHover,
-    click: PlayClicked,
-    click_hover: PlayClickedHover,
-    title: "Play",
-    altTitle: "Pause"
-}
-
 export const NextIcon = {
     normal: NextNormal,
     normal_hover: NextHover,
@@ -68,3 +59,23 @@ export const RepeatIcon = {
     title: "Enable Repeat",
     altTitle: "Disable Repeat"
 }
+
+interface IconMapping {
+    normal?: string;
+    normal_hover?: string;
+    click?: string;
+    click_hover?: string;
+    title?: string;
+    altTitle?: string;
+}
+
+export const iconMappings: Record<string, IconMapping> = {
+    play: {
+        normal: PlayNormal,
+        normal_hover: PlayHover,
+        click: PlayClicked,
+        click_hover: PlayClickedHover,
+        title: "Play",
+        altTitle: "Pause"
+    },
+};
