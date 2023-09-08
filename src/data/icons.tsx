@@ -49,6 +49,8 @@ import DevicesHover from '../assets/icons/devices_hover.svg'
 // Volume
 import VolumeNormal from '../assets/icons/volume_normal.svg';
 import VolumeHover from '../assets/icons/volume_hover.svg';
+import VolumeClicked from '../assets/icons/mute_normal.svg';
+import VolumeClickedHover from '../assets/icons/mute_hover.svg';
 
 // Fullscreen
 import FullNormal from '../assets/icons/fullscreen_normal.svg';
@@ -139,8 +141,8 @@ export const iconMappings: Record<string, IconMapping> = {
     volume: {
         normal: VolumeNormal,
         normal_hover: VolumeHover,
-        click: VolumeNormal,
-        click_hover: VolumeHover,
+        click: VolumeClicked,
+        click_hover: VolumeClickedHover,
         title: "Mute",
         altTitle: "Unmute"
     },
