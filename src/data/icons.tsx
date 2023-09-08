@@ -24,6 +24,12 @@ import RepeatHover from '../assets/icons/repeat_hover.svg';
 import RepeatClicked from '../assets/icons/repeat_clicked.svg';
 import RepeatClickedHover from '../assets/icons/repeat_clicked_hover.svg';
 
+// Playing
+import PlayingNormal from '../assets/icons/playing_normal.svg';
+import PlayingHover from '../assets/icons/playing_hover.svg';
+import PlayingClicked from '../assets/icons/playing_clicked.svg';
+import PlayingClickedHover from '../assets/icons/playing_clicked_hover.svg';
+
 // Lyrics
 import LyricsNormal from '../assets/icons/lyrics_normal.svg';
 import LyricsHover from '../assets/icons/lyrics_hover.svg';
@@ -105,6 +111,14 @@ export const iconMappings: Record<string, IconMapping> = {
         click_hover: LyricsClickedHover,
         title: "Lyrics",
         altTitle: "Lyrics"
+    },
+    playing: {
+        normal: PlayingNormal,
+        normal_hover: PlayingHover,
+        click: PlayingClicked,
+        click_hover: PlayingClickedHover,
+        title: "Now Playing View",
+        altTitle: "Now Playing View"
     },
     queue: {
         normal: QueueNormal,
