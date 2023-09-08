@@ -1,8 +1,23 @@
 import React from 'react';
-import {CenterProgressGrid, CenterButtonsGrid, StyledDiv, RightButtonsGrid} from "../../../styles/container";
-import {PlayerButton} from "../../atoms/player_button";
-import {LinearProgress} from "@mui/joy";
+
 import styled from "styled-components";
+import {LinearProgress} from "@mui/joy";
+import {ProgressGrid, ButtonsGrid, StyledDiv, ArtistStack} from "../../../styles/container";
+
+import {PlayerIcon} from "../../atoms/player_button";
+import {PlayerArtist} from "../../atoms/player_artist";
+
+export const LeftNav = styled.div`
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+
+  left: 7.5px;
+  height: 100%;
+  
+  justify-content: center;
+  align-items: center;
+`;
 
 export const CenterNav = styled.div`
   flex-direction: column;
@@ -35,18 +50,48 @@ export const ProgressTimer = styled.span`
   margin-left: 10px;
 `
 
+export const ArtistSong = styled.span`
+  color: #ffffff;
+  font-size: 13px;
+  font-family: "Circular Medium",sans-serif;
+  letter-spacing: .5px;
+  
+  margin-bottom: 2.5px;
+`
+
+export const ArtistName = styled.span`
+  color: #999999;
+  font-size: 10px;
+  font-family: "Circular Book",sans-serif;
+  letter-spacing: .5px;
+  
+  margin-top: 2.5px;
+`
+
 export function Player(props: {isLocal: boolean}){
     return(
        <StyledDiv style={{height: props.isLocal ? '12.5% ': '15%', flexDirection: 'row'}}>
+           <LeftNav>
+               <PlayerArtist/>
+               <ArtistStack>
+                    <ArtistSong>
+                        Fall In Love Alone
+                    </ArtistSong>
+                    <ArtistName>
+                        Stacey Ryan
+                    </ArtistName>
+               </ArtistStack>
+               <PlayerIcon meta={'heart'}/>
+           </LeftNav>
            <CenterNav>
-               <CenterButtonsGrid>
-                   <PlayerButton meta={'shuffle'}/>
-                   <PlayerButton meta={'prev'}/>
-                   <PlayerButton meta={'play'}/>
-                   <PlayerButton meta={'next'}/>
-                   <PlayerButton meta={'repeat'}/>
-               </CenterButtonsGrid>
-               <CenterProgressGrid>
+               <ButtonsGrid>
+                   <PlayerIcon meta={'shuffle'}/>
+                   <PlayerIcon meta={'prev'}/>
+                   <PlayerIcon meta={'play'}/>
+                   <PlayerIcon meta={'next'}/>
+                   <PlayerIcon meta={'repeat'}/>
+               </ButtonsGrid>
+               <ProgressGrid>
                    <ProgressTimer>
                        0:00
                    </ProgressTimer>
@@ -54,20 +99,18 @@ export function Player(props: {isLocal: boolean}){
                    <ProgressTimer>
                        0:00
                    </ProgressTimer>
-               </CenterProgressGrid>
+               </ProgressGrid>
            </CenterNav>
            <RightNav>
-               <RightButtonsGrid>
-                   <PlayerButton meta={'playing'}/>
-                   <PlayerButton meta={'lyrics'}/>
-                   <PlayerButton meta={'queue'}/>
-                   <PlayerButton meta={'devices'}/>
-                   <PlayerButton meta={'volume'}/>
-                   <CenterProgressGrid style={{minWidth: 90}}>
-                       <LinearProgress determinate color='neutral' value={100} size='sm'/>
-                   </CenterProgressGrid>
-                   <PlayerButton meta={'full'}/>
-               </RightButtonsGrid>
+               <PlayerIcon meta={'playing'}/>
+               <PlayerIcon meta={'lyrics'}/>
+               <PlayerIcon meta={'queue'}/>
+               <PlayerIcon meta={'devices'}/>
+               <PlayerIcon meta={'volume'}/>
+               <ProgressGrid style={{minWidth: 90}}>
+                   <LinearProgress determinate color='neutral' value={100} size='sm'/>
+               </ProgressGrid>
+               <PlayerIcon meta={'full'}/>
            </RightNav>
        </StyledDiv>
     )

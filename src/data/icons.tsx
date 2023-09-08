@@ -1,3 +1,9 @@
+// Heart
+import HeartNormal from '../assets/icons/heart_normal.svg';
+import HeartHover from '../assets/icons/heart_hover.svg';
+import HeartClicked from '../assets/icons/heart_clicked.svg';
+import HeartClickedHover from '../assets/icons/heart_clicked_hover.svg';
+
 // Shuffle
 import ShuffleNormal from '../assets/icons/shuffle_normal.svg';
 import ShuffleHover from '../assets/icons/shuffle_hover.svg';
@@ -49,6 +55,8 @@ import DevicesHover from '../assets/icons/devices_hover.svg'
 // Volume
 import VolumeNormal from '../assets/icons/volume_normal.svg';
 import VolumeHover from '../assets/icons/volume_hover.svg';
+import VolumeClicked from '../assets/icons/mute_normal.svg';
+import VolumeClickedHover from '../assets/icons/mute_hover.svg';
 
 // Fullscreen
 import FullNormal from '../assets/icons/fullscreen_normal.svg';
@@ -64,6 +72,14 @@ interface IconMapping {
 }
 
 export const iconMappings: Record<string, IconMapping> = {
+    heart: {
+        normal: HeartNormal,
+        normal_hover: HeartHover,
+        click: HeartClicked,
+        click_hover: HeartClickedHover,
+        title: "Save to Your Library",
+        altTitle: "Remove from Your Library"
+    },
     shuffle: {
         normal: ShuffleNormal,
         normal_hover: ShuffleHover,
@@ -139,8 +155,8 @@ export const iconMappings: Record<string, IconMapping> = {
     volume: {
         normal: VolumeNormal,
         normal_hover: VolumeHover,
-        click: VolumeNormal,
-        click_hover: VolumeHover,
+        click: VolumeClicked,
+        click_hover: VolumeClickedHover,
         title: "Mute",
         altTitle: "Unmute"
     },

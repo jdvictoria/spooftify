@@ -12,7 +12,7 @@ export const StyledDiv = styled.div`
   background-color: #000000;
 `;
 
-export const CenterButtonsGrid = styled.div`
+export const ButtonsGrid = styled.div`
   display: flex;
   position: relative;
   flex-direction: row;
@@ -24,7 +24,7 @@ export const CenterButtonsGrid = styled.div`
   align-items: center;
 `
 
-export const CenterProgressGrid = styled.div`
+export const ProgressGrid = styled.div`
   display: flex;
   position: relative;
   flex-direction: row;
@@ -33,11 +33,14 @@ export const CenterProgressGrid = styled.div`
   align-items: center;
 `
 
-export const RightButtonsGrid = styled.div`
+export const ArtistStack = styled.div`
   display: flex;
   position: relative;
-  flex-direction: row;
+  flex-direction: column;
 
+  margin-left: 7px;
+  margin-right: 7px;
+  
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 `
