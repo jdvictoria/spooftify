@@ -29,7 +29,6 @@ export const CenterProgressGrid = styled.div`
   position: relative;
   flex-direction: row;
   
-  width: 100%;
   justify-content: center;
   align-items: center;
 `

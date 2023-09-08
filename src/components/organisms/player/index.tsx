@@ -63,6 +63,9 @@ export function Player(props: {isLocal: boolean}){
                    <PlayerButton meta={'queue'}/>
                    <PlayerButton meta={'devices'}/>
                    <PlayerButton meta={'volume'}/>
+                   <CenterProgressGrid style={{minWidth: 90}}>
+                       <LinearProgress determinate color='neutral' value={100} size='sm'/>
+                   </CenterProgressGrid>
                    <PlayerButton meta={'full'}/>
                </RightButtonsGrid>
            </RightNav>
