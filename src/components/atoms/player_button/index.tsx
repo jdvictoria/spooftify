@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-import styled from "styled-components";
+
 import {Tooltip} from "@mui/joy";
+import styled from "styled-components";
 import {iconMappings} from "../../../data/icons";
 
-export const StyledButton = styled.img``;
+const StyledButton = styled.img``;
 
-export function PlayerButton(props: {meta: string}){
+export function PlayerIcon(props: {meta: string}){
     const [isHovered, setIsHovered] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
 

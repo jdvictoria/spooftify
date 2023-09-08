@@ -1,3 +1,9 @@
+// Heart
+import HeartNormal from '../assets/icons/heart_normal.svg';
+import HeartHover from '../assets/icons/heart_hover.svg';
+import HeartClicked from '../assets/icons/heart_clicked.svg';
+import HeartClickedHover from '../assets/icons/heart_clicked_hover.svg';
+
 // Shuffle
 import ShuffleNormal from '../assets/icons/shuffle_normal.svg';
 import ShuffleHover from '../assets/icons/shuffle_hover.svg';
@@ -66,6 +72,14 @@ interface IconMapping {
 }
 
 export const iconMappings: Record<string, IconMapping> = {
+    heart: {
+        normal: HeartNormal,
+        normal_hover: HeartHover,
+        click: HeartClicked,
+        click_hover: HeartClickedHover,
+        title: "Save to Your Library",
+        altTitle: "Remove from Your Library"
+    },
     shuffle: {
         normal: ShuffleNormal,
         normal_hover: ShuffleHover,
