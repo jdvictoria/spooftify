@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {LinearProgress} from "@mui/joy";
 import {PlayerIcon} from "../../atoms/player_button";
 import {ProgressGrid} from "../../../styles/container";
+import {ProgressBar} from "../../atoms/player_progress";
 
 const StyledNav = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ export function RightNav(){
             <PlayerIcon meta={'devices'}/>
             <PlayerIcon meta={'volume'}/>
             <ProgressGrid style={{minWidth: 90}}>
-                <LinearProgress determinate color='neutral' value={100} size='sm'/>
+                <ProgressBar/>
             </ProgressGrid>
             <PlayerIcon meta={'full'}/>
         </StyledNav>

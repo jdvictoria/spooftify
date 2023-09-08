@@ -5,6 +5,7 @@ import {LinearProgress} from "@mui/joy";
 import {ButtonsGrid, ProgressGrid} from "../../../styles/container";
 
 import {PlayerIcon} from "../../atoms/player_button";
+import {ProgressBar} from "../../atoms/player_progress";
 
 const StyledNav = styled.div`
   flex-direction: column;
@@ -39,7 +40,7 @@ export function CenterNav(){
                 <ProgressTimer>
                     0:00
                 </ProgressTimer>
-                <LinearProgress determinate color='neutral' value={75} size='sm'/>
+                <ProgressBar/>
                 <ProgressTimer>
                     0:00
                 </ProgressTimer>
