@@ -1,7 +1,6 @@
 import React from 'react';
 
 import styled from "styled-components";
-import {LinearProgress} from "@mui/joy";
 import {ButtonsGrid, ProgressGrid} from "../../../styles/container";
 
 import {PlayerIcon} from "../../atoms/player_button";

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import styled from "styled-components";
-import {LinearProgress} from "@mui/joy";
-import {PlayerIcon} from "../../atoms/player_button";
 import {ProgressGrid} from "../../../styles/container";
+
+import {PlayerIcon} from "../../atoms/player_button";
 import {ProgressBar} from "../../atoms/player_progress";
 
 const StyledNav = styled.div`
