@@ -30,15 +30,18 @@ export function ProgressBar() {
             {isHovered ? (
                 <Slider
                     defaultValue={75}
+                    color='success'
+                    variant='solid'
                     sx={{
-                        "--Slider-trackSize": "5px"
+                        "--Slider-trackSize": "4px",
                     }}
                 />
             ) : (
                 <LinearProgress
                     determinate
+                    color='success'
+                    variant='solid'
                     value={75}
-                    color='primary'
                     size='sm'
                 />
             )}
