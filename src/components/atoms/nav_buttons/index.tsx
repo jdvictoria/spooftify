@@ -57,7 +57,7 @@ export function SmallNavButton(props: { meta: string; active: boolean; onClick: 
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={() => props.onClick(props.meta)} // Pass meta to the parent
                 style={{
-                    color: isHovered ? '#ffffff' : '#B3B3B3',
+                    color: props.active ? '#ffffff' : isHovered ? '#ffffff' : '#b3b3b3',
                 }}
             >
                 {textSource}
