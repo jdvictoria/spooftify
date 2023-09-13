@@ -41,7 +41,7 @@ export function PlayerIcon(props: {meta: string}){
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={handleClick}
                 style={{
-                    marginLeft: 6.5,
+                    marginLeft: props.meta === 'volume' ? 4 : 6.5,
                     marginRight: props.meta === 'playing' ? 12 : 6.5,
                     maxHeight: props.meta === 'play' ? '40px' : '25px',
                     maxWidth: props.meta === 'play' ? '40px' : '25px'
