@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import styled from "styled-components";
-import {LinearProgress} from "@mui/joy";
 import {ButtonsGrid, ProgressGrid} from "../../../styles/container";
 
 import {PlayerIcon} from "../../atoms/player_button";
@@ -27,6 +26,8 @@ const ProgressTimer = styled.span`
 `
 
 export function CenterNav(){
+    const [value, setValue] = useState(75);
+
     return(
         <StyledNav>
             <ButtonsGrid>
@@ -40,7 +41,7 @@ export function CenterNav(){
                 <ProgressTimer>
                     0:00
                 </ProgressTimer>
-                <ProgressBar/>
+                <ProgressBar progressValue={value} setProgressValue={setValue}/>
                 <ProgressTimer>
                     0:00
                 </ProgressTimer>
