@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
-import {LinearProgress, Slider} from "@mui/joy";
 import styled from "styled-components";
+import {LinearProgress, Slider} from "@mui/joy";
 
 const ProgressDiv = styled.div`
   display: flex;

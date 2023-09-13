@@ -62,6 +62,16 @@ import VolumeClickedHover from '../assets/icons/mute_hover.svg';
 import FullNormal from '../assets/icons/fullscreen_normal.svg';
 import FullHover from '../assets/icons/fullscreen_hover.svg'
 
+// Home
+import HomeNormal from '../assets/icons/home_normal.svg';
+import HomeHover from '../assets/icons/home_hover.svg';
+import HomeClicked from '../assets/icons/home_clicked.svg';
+
+// Search
+import SearchNormal from '../assets/icons/search_normal.svg';
+import SearchHover from '../assets/icons/search_hover.svg';
+import SearchClicked from '../assets/icons/search_clicked.svg';
+
 interface IconMapping {
     normal?: string;
     normal_hover?: string;
@@ -168,4 +178,20 @@ export const iconMappings: Record<string, IconMapping> = {
         title: "Full screen",
         altTitle: undefined
     },
+    home: {
+        normal: HomeNormal,
+        normal_hover: HomeHover,
+        click: HomeClicked,
+        click_hover: undefined,
+        title: undefined,
+        altTitle: undefined
+    },
+    search: {
+        normal: SearchNormal,
+        normal_hover: SearchHover,
+        click: SearchClicked,
+        click_hover: undefined,
+        title: undefined,
+        altTitle: undefined
+    }
 };

@@ -21,7 +21,7 @@ const StyledNav = styled.div`
 const ArtistSong = styled.span`
   color: #ffffff;
   font-size: 13px;
-  font-family: "Circular Medium",sans-serif;
+  font-family: "Circular Medium", sans-serif;
   letter-spacing: .5px;
   
   margin-bottom: 2.5px;
@@ -30,7 +30,7 @@ const ArtistSong = styled.span`
 const ArtistName = styled.span`
   color: #999999;
   font-size: 10px;
-  font-family: "Circular Book",sans-serif;
+  font-family: "Circular Book", sans-serif;
   letter-spacing: .5px;
   
   margin-top: 2.5px;
