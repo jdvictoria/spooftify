@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import styled from "styled-components";
 import {ProgressGrid} from "../../../styles/container";
@@ -19,6 +19,8 @@ const StyledNav = styled.div`
 `;
 
 export function RightNav(){
+    const [value, setValue] = useState(50);
+
     return(
         <StyledNav>
             <PlayerIcon meta={'playing'}/>
@@ -27,7 +29,7 @@ export function RightNav(){
             <PlayerIcon meta={'devices'}/>
             <PlayerIcon meta={'volume'}/>
             <ProgressGrid style={{minWidth: 90}}>
-                <ProgressBar/>
+                <ProgressBar progressValue={value} setProgressValue={setValue}/>
             </ProgressGrid>
             <PlayerIcon meta={'full'}/>
         </StyledNav>

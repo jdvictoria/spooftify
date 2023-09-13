@@ -14,7 +14,9 @@ const ProgressDiv = styled.div`
   width: 100%;
   max-height: 15px;
 `;
-export function ProgressBar() {
+
+// @ts-ignore
+export function ProgressBar({progressValue, setProgressValue}) {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -25,23 +27,28 @@ export function ProgressBar() {
         setIsHovered(false);
     };
 
+    const handleChange = (event: Event, newValue: number | number[]) => {
+        setProgressValue(newValue as number[]);
+    };
+
     return (
         <ProgressDiv onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             {isHovered ? (
                 <Slider
-                    defaultValue={75}
+                    defaultValue={progressValue}
                     color='success'
                     variant='solid'
                     sx={{
                         "--Slider-trackSize": "4px",
                     }}
+                    onChange={handleChange}
                 />
             ) : (
                 <LinearProgress
                     determinate
+                    value={progressValue}
                     color='success'
                     variant='solid'
-                    value={75}
                     size='sm'
                 />
             )}
