@@ -3,7 +3,9 @@ import React from 'react';
 import styled from "styled-components";
 import {StyledDiv} from "../../../styles/container";
 
+import {BigCard} from "../../molecules/nav_big_card";
 import {SmallCard} from "../../molecules/nav_small_card";
+
 
 export const Nav = styled.div`
   display: flex;
@@ -18,23 +20,6 @@ export const Nav = styled.div`
   
   background-color: #000000;
 `;
-
-export const NavBigCard = styled.div`
-  display: flex;
-  position: relative;
-
-  width: 97.5%;
-  height: 80%;
-  
-  justify-content: center;
-  align-items: center;
-  
-  margin-top: 4px;
-  
-  border-radius: 10px;
-  background-color: #121212;
-`;
-
 
 export const Home = styled.div`
   display: flex;
@@ -70,7 +55,7 @@ export function Main(props: {isLocal: boolean}){
         <StyledDiv style={{height: props.isLocal ? '87.5% ': '85%'}}>
             <Nav>
                 <SmallCard/>
-                <NavBigCard/>
+                <BigCard/>
             </Nav>
             <Home>
                 <HomeCard/>
