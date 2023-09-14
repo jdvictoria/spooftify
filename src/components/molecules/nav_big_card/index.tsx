@@ -66,12 +66,25 @@ const LowerDiv = styled.div`
 
 export function BigCard(){
     const [activeButton, setActiveButton] = useState('library');
+    const [arrowButton, setArrowButton] = useState('expand');
 
     const handleButtonClick = (meta: string) => {
         setActiveButton((prevActiveButton) =>
             prevActiveButton === meta ? '' : meta
         );
     };
+
+    const handleArrowClick = () => {
+        if(arrowButton === 'expand') {
+            setTimeout(() => {
+                setArrowButton('collapse');
+            }, 500);
+        } else if(arrowButton === 'collapse') {
+            setTimeout(() => {
+                setArrowButton('expand');
+            }, 500);
+        }
+    }
 
     return(
         <NavBigCard>
@@ -83,9 +96,9 @@ export function BigCard(){
                     plain={false}
                 />
                 <NavigationIcon
-                    meta="expand"
-                    active={activeButton === 'expand'}
-                    onClick={() => handleButtonClick('expand')}
+                    meta={arrowButton}
+                    active={activeButton === arrowButton}
+                    onClick={handleArrowClick}
                     plain={true}
                 />
             </UpperDiv>
