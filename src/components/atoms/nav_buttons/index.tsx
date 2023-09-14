@@ -87,7 +87,9 @@ export function NavigationIcon(props: { meta: string; active: boolean; onClick: 
                         onMouseLeave={() => setIsHovered(false)}
                         onClick={() => props.onClick(props.meta)}
                         style={{
-                            color: props.active ? '#ffffff' : isHovered ? '#ffffff' : '#b3b3b3',
+                            color: props.active ?
+                                (props.meta === 'library' ? (isHovered ? '#ffffff' : '#b3b3b3') : '#ffffff')
+                                : (isHovered ? '#ffffff' : '#b3b3b3'),
                         }}
                     >
                         {textSource}

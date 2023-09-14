@@ -17,8 +17,6 @@ export const Nav = styled.div`
   
   justify-content: center;
   align-items: flex-end;
-  
-  background-color: #000000;
 `;
 
 export const Home = styled.div`
@@ -39,7 +37,7 @@ export const HomeCard = styled.div`
   position: relative;
 
   width: 98.5%;
-  height: 98.5%;
+  height: 98.75%;
   
   justify-content: center;
   align-items: center;

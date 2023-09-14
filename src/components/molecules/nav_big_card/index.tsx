@@ -69,20 +69,22 @@ export function BigCard(){
     const [arrowButton, setArrowButton] = useState('expand');
 
     const handleButtonClick = (meta: string) => {
-        setActiveButton((prevActiveButton) =>
-            prevActiveButton === meta ? '' : meta
-        );
+        setTimeout(() => {
+            setActiveButton((prevActiveButton) =>
+                prevActiveButton === meta ? '' : meta
+            );
+        }, 250);
     };
 
     const handleArrowClick = () => {
         if(arrowButton === 'expand') {
             setTimeout(() => {
                 setArrowButton('collapse');
-            }, 500);
+            }, 250);
         } else if(arrowButton === 'collapse') {
             setTimeout(() => {
                 setArrowButton('expand');
-            }, 500);
+            }, 250);
         }
     }
 
