@@ -223,7 +223,7 @@ export const iconMappings: Record<string, IconMapping> = {
         normal_hover: ExpandHover,
         click: ExpandClicked,
         click_hover: undefined,
-        title: undefined,
+        title: "Show More",
         altTitle: undefined
     },
     collapse: {
@@ -231,7 +231,7 @@ export const iconMappings: Record<string, IconMapping> = {
         normal_hover: CollapseHover,
         click: CollapseClicked,
         click_hover: undefined,
-        title: undefined,
+        title: "Show Less",
         altTitle: undefined
     }
 };

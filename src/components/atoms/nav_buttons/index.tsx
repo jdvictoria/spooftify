@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 
+import {Tooltip} from "@mui/joy";
 import styled from "styled-components";
 import {iconMappings} from "../../../data/icons";
 
@@ -18,6 +19,11 @@ const StyledContainer = styled.div`
 `;
 
 const StyledButton = styled.img`
+  max-height: 25px;
+  max-width: 25px;
+
+  margin: 10px 20px 10px 20px;
+  
   justify-content: center;
   align-items: center;
 `;
@@ -46,43 +52,48 @@ export function NavigationIcon(props: { meta: string; active: boolean; onClick: 
         normal,
         normal_hover,
         click,
-        click_hover
+        click_hover,
+        title,
     } = iconMappings[props.meta] || {};
 
     const imageSource =
         props.active ? (isHovered ? click_hover : click)
         : (isHovered ? normal_hover : normal);
-    const textSource = toTitleCase(props.meta);
 
     const expandSource = isHeld ? click : (isHovered ? normal_hover : normal);
 
+    const titleSource = title;
+
+    const textSource = toTitleCase(props.meta);
+
     return (
-        <StyledContainer>
-            <StyledButton
-                src={props.meta === 'expand' || props.meta === 'collapse' ? expandSource : imageSource}
-                onMouseDown={() => setIsHeld(true)}
-                onMouseUp={() => setIsHeld(false)}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                onClick={() => props.onClick(props.meta)} // Pass meta to the parent
-                style={{
-                    margin: '10px 20px 10px 20px',
-                    maxHeight: '25px',
-                    maxWidth: '25px',
-                }}
-            />
-            {!props.plain && (
-                <StyledText
+        <Tooltip
+            title={titleSource}
+            placement="top"
+            size="sm"
+            variant="soft">
+            <StyledContainer>
+                <StyledButton
+                    src={props.meta === 'expand' || props.meta === 'collapse' ? expandSource : imageSource}
+                    onMouseDown={() => setIsHeld(true)}
+                    onMouseUp={() => setIsHeld(false)}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
-                    onClick={() => props.onClick(props.meta)} // Pass meta to the parent
-                    style={{
-                        color: props.active ? '#ffffff' : isHovered ? '#ffffff' : '#b3b3b3',
-                    }}
-                >
-                    {textSource}
-                </StyledText>
-            )}
-        </StyledContainer>
+                    onClick={() => props.onClick(props.meta)}
+                />
+                {!props.plain && (
+                    <StyledText
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                        onClick={() => props.onClick(props.meta)}
+                        style={{
+                            color: props.active ? '#ffffff' : isHovered ? '#ffffff' : '#b3b3b3',
+                        }}
+                    >
+                        {textSource}
+                    </StyledText>
+                )}
+            </StyledContainer>
+        </Tooltip>
     );
 }
