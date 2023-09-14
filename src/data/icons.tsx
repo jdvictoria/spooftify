@@ -225,5 +225,13 @@ export const iconMappings: Record<string, IconMapping> = {
         click_hover: undefined,
         title: undefined,
         altTitle: undefined
+    },
+    collapse: {
+        normal: CollapseNormal,
+        normal_hover: CollapseHover,
+        click: CollapseClicked,
+        click_hover: undefined,
+        title: undefined,
+        altTitle: undefined
     }
 };
