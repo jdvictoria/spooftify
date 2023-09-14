@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 import styled from "styled-components";
-import {NavButtonText} from "../../atoms/nav_buttons";
+import {NavigationIcon} from "../../atoms/nav_buttons";
 
 const NavBigCard = styled.div`
   display: flex;
@@ -76,10 +76,17 @@ export function BigCard(){
     return(
         <NavBigCard>
             <UpperDiv>
-                <NavButtonText
+                <NavigationIcon
                     meta="library"
                     active={activeButton === 'library'}
                     onClick={() => handleButtonClick('library')}
+                    plain={false}
+                />
+                <NavigationIcon
+                    meta="expand"
+                    active={activeButton === 'expand'}
+                    onClick={() => handleButtonClick('expand')}
+                    plain={true}
                 />
             </UpperDiv>
             <LowerDiv>

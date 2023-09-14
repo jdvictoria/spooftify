@@ -78,6 +78,16 @@ import LibraryHover from '../assets/icons/library_hover.svg';
 import LibraryClicked from '../assets/icons/library_clicked.svg';
 import LibraryClickedHover from '../assets/icons/library_clicked_hover.svg';
 
+// Expand
+import ExpandNormal from '../assets/icons/expand_normal.svg';
+import ExpandHover from '../assets/icons/expand_hover.svg';
+import ExpandClicked from '../assets/icons/expand_clicked.svg';
+
+// Collapse
+import CollapseNormal from '../assets/icons/collapse_normal.svg';
+import CollapseHover from '../assets/icons/collapse_hover.svg';
+import CollapseClicked from '../assets/icons/collapse_clicked.svg';
+
 interface IconMapping {
     normal?: string;
     normal_hover?: string;
@@ -205,6 +215,14 @@ export const iconMappings: Record<string, IconMapping> = {
         normal_hover: LibraryHover,
         click: LibraryClicked,
         click_hover: LibraryClickedHover,
+        title: undefined,
+        altTitle: undefined
+    },
+    expand: {
+        normal: ExpandNormal,
+        normal_hover: ExpandHover,
+        click: ExpandClicked,
+        click_hover: undefined,
         title: undefined,
         altTitle: undefined
     }

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import styled from "styled-components";
-import {NavButtonText} from "../../atoms/nav_buttons";
+import {NavigationIcon} from "../../atoms/nav_buttons";
 
 const NavSmallCard = styled.div`
   display: flex;
@@ -30,8 +30,8 @@ export function SmallCard(){
 
     return(
         <NavSmallCard>
-            <NavButtonText meta="home" active={activeButton === 'home'} onClick={handleButtonClick} />
-            <NavButtonText meta="search" active={activeButton === 'search'} onClick={handleButtonClick} />
+            <NavigationIcon meta="home" active={activeButton === 'home'} onClick={handleButtonClick} plain={false}/>
+            <NavigationIcon meta="search" active={activeButton === 'search'} onClick={handleButtonClick} plain={false}/>
         </NavSmallCard>
     )
 }

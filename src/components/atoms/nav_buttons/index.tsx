@@ -38,8 +38,9 @@ function toTitleCase(text: string) {
         .join(' ');
 }
 
-export function NavButtonText(props: { meta: string; active: boolean; onClick: (meta: string) => void }) {
+export function NavigationIcon(props: { meta: string; active: boolean; onClick: (meta: string) => void; plain: boolean}) {
     const [isHovered, setIsHovered] = useState(false);
+    const [isHeld, setIsHeld] = useState(false);
 
     const {
         normal,
@@ -53,10 +54,14 @@ export function NavButtonText(props: { meta: string; active: boolean; onClick: (
         : (isHovered ? normal_hover : normal);
     const textSource = toTitleCase(props.meta);
 
+    const expandSource = isHeld ? click : (isHovered ? normal_hover : normal);
+
     return (
         <StyledContainer>
             <StyledButton
-                src={imageSource}
+                src={props.meta === 'expand' ? expandSource : imageSource}
+                onMouseDown={() => setIsHeld(true)}
+                onMouseUp={() => setIsHeld(false)}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 onClick={() => props.onClick(props.meta)} // Pass meta to the parent
@@ -66,16 +71,18 @@ export function NavButtonText(props: { meta: string; active: boolean; onClick: (
                     maxWidth: '25px',
                 }}
             />
-            <StyledText
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                onClick={() => props.onClick(props.meta)} // Pass meta to the parent
-                style={{
-                    color: props.active ? '#ffffff' : isHovered ? '#ffffff' : '#b3b3b3',
-                }}
-            >
-                {textSource}
-            </StyledText>
+            {!props.plain && (
+                <StyledText
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                    onClick={() => props.onClick(props.meta)} // Pass meta to the parent
+                    style={{
+                        color: props.active ? '#ffffff' : isHovered ? '#ffffff' : '#b3b3b3',
+                    }}
+                >
+                    {textSource}
+                </StyledText>
+            )}
         </StyledContainer>
     );
 }
