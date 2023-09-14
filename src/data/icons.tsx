@@ -88,6 +88,11 @@ import CollapseNormal from '../assets/icons/collapse_normal.svg';
 import CollapseHover from '../assets/icons/collapse_hover.svg';
 import CollapseClicked from '../assets/icons/collapse_clicked.svg';
 
+// Add
+import AddNormal from '../assets/icons/add_normal.svg';
+import AddHover from '../assets/icons/add_hover.svg';
+import AddClicked from '../assets/icons/add_clicked.svg';
+
 interface IconMapping {
     normal?: string;
     normal_hover?: string;
@@ -232,6 +237,14 @@ export const iconMappings: Record<string, IconMapping> = {
         click: CollapseClicked,
         click_hover: undefined,
         title: "Show Less",
+        altTitle: undefined
+    },
+    add: {
+        normal: AddNormal,
+        normal_hover: AddHover,
+        click: AddClicked,
+        click_hover: undefined,
+        title: "Create Playlist or Folder",
         altTitle: undefined
     }
 };

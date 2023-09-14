@@ -98,6 +98,12 @@ export function BigCard(){
                     plain={false}
                 />
                 <NavigationIcon
+                    meta='add'
+                    active={activeButton === 'add'}
+                    onClick={() => handleButtonClick('add')}
+                    plain={true}
+                />
+                <NavigationIcon
                     meta={arrowButton}
                     active={activeButton === arrowButton}
                     onClick={handleArrowClick}
