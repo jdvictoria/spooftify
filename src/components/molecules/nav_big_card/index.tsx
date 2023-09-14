@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 
 import styled from "styled-components";
+import {NavButtonText} from "../../atoms/nav_buttons";
 
 const NavBigCard = styled.div`
   display: flex;
@@ -20,49 +21,69 @@ const NavBigCard = styled.div`
 `;
 
 const UpperDiv = styled.div`
-  background-color: yellow;
+  display: flex;
+  position: relative;
+  
   height: 21.5%;
-  width: 100%;
+  width: 97.5%;
   
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+
+  justify-content: center;
+  align-items: center;
 `;
 
 const LowerDiv = styled.div`
   background-color: red;
   height: 78.5%;
-  width: 100%;
+  width: 97.5%;
   overflow-y: scroll;
   text-align: justify;
 
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #5A5A5A;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #898989;
+    border-radius: 10px;
+  }
 `;
 
 
 export function BigCard(){
+    const [activeButton, setActiveButton] = useState('library');
+
+    const handleButtonClick = (meta: string) => {
+        setActiveButton((prevActiveButton) =>
+            prevActiveButton === meta ? '' : meta
+        );
+    };
+
     return(
         <NavBigCard>
             <UpperDiv>
-
+                <NavButtonText
+                    meta="library"
+                    active={activeButton === 'library'}
+                    onClick={() => handleButtonClick('library')}
+                />
             </UpperDiv>
             <LowerDiv>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book. It has survived not only
-                five centuries, but also the leap into electronic typesetting,
-                remaining essentially unchanged. It was popularised in the 1960s with
-                the release of Letraset sheets containing Lorem Ipsum passages, and
-                more recently with desktop publishing software like Aldus PageMaker
-                including versions of Lorem Ipsum. It is a long established fact that
-                a reader will be distracted by the readable content of a page when
-                looking at its layout. The point of using Lorem Ipsum is that it has a
-                more-or-less normal distribution of letters, as opposed to using
-                'Content here, content here', making it look like readable English.
-                Many desktop publishing packages and web page editors now use Lorem
-                Ipsum as their default model text, and a search for 'lorem ipsum' will
-                uncover many web sites still in their infancy.
+
             </LowerDiv>
         </NavBigCard>
     )

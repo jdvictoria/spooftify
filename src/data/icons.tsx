@@ -72,6 +72,12 @@ import SearchNormal from '../assets/icons/search_normal.svg';
 import SearchHover from '../assets/icons/search_hover.svg';
 import SearchClicked from '../assets/icons/search_clicked.svg';
 
+// Library
+import LibraryNormal from '../assets/icons/library_normal.svg';
+import LibraryHover from '../assets/icons/library_hover.svg';
+import LibraryClicked from '../assets/icons/library_clicked.svg';
+import LibraryClickedHover from '../assets/icons/library_clicked_hover.svg';
+
 interface IconMapping {
     normal?: string;
     normal_hover?: string;
@@ -191,6 +197,14 @@ export const iconMappings: Record<string, IconMapping> = {
         normal_hover: SearchHover,
         click: SearchClicked,
         click_hover: undefined,
+        title: undefined,
+        altTitle: undefined
+    },
+    library: {
+        normal: LibraryNormal,
+        normal_hover: LibraryHover,
+        click: LibraryClicked,
+        click_hover: LibraryClickedHover,
         title: undefined,
         altTitle: undefined
     }

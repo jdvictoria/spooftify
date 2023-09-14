@@ -31,13 +31,27 @@ const StyledText = styled.span`
   align-items: center;
 `;
 
-export function SmallNavButton(props: { meta: string; active: boolean; onClick: (meta: string) => void }) {
+function toTitleCase(text: string) {
+    return text
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+}
+
+export function NavButtonText(props: { meta: string; active: boolean; onClick: (meta: string) => void }) {
     const [isHovered, setIsHovered] = useState(false);
 
-    const { normal, normal_hover, click } = iconMappings[props.meta] || {};
+    const {
+        normal,
+        normal_hover,
+        click,
+        click_hover
+    } = iconMappings[props.meta] || {};
 
-    const imageSource = props.active ? click : isHovered ? normal_hover : normal;
-    const textSource = props.meta === 'home' ? 'Home' : 'Search';
+    const imageSource =
+        props.active ? (isHovered ? click_hover : click)
+        : (isHovered ? normal_hover : normal);
+    const textSource = toTitleCase(props.meta);
 
     return (
         <StyledContainer>
