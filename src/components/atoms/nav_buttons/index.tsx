@@ -74,7 +74,7 @@ export function NavigationIcon(props: { meta: string; active: boolean; onClick: 
             variant="soft">
             <StyledContainer>
                 <StyledButton
-                    src={props.meta === 'expand' || props.meta === 'collapse' ? expandSource : imageSource}
+                    src={props.meta === 'expand' || props.meta === 'collapse' || props.meta === 'add' ? expandSource : imageSource}
                     onMouseDown={() => setIsHeld(true)}
                     onMouseUp={() => setIsHeld(false)}
                     onMouseEnter={() => setIsHovered(true)}

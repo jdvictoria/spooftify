@@ -76,6 +76,10 @@ export function BigCard(){
         }, 250);
     };
 
+    const handlePlusClick = () => {
+
+    }
+
     const handleArrowClick = () => {
         if(arrowButton === 'expand') {
             setTimeout(() => {
