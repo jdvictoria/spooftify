@@ -72,6 +72,27 @@ import SearchNormal from '../assets/icons/search_normal.svg';
 import SearchHover from '../assets/icons/search_hover.svg';
 import SearchClicked from '../assets/icons/search_clicked.svg';
 
+// Library
+import LibraryNormal from '../assets/icons/library_normal.svg';
+import LibraryHover from '../assets/icons/library_hover.svg';
+import LibraryClicked from '../assets/icons/library_clicked.svg';
+import LibraryClickedHover from '../assets/icons/library_clicked_hover.svg';
+
+// Expand
+import ExpandNormal from '../assets/icons/expand_normal.svg';
+import ExpandHover from '../assets/icons/expand_hover.svg';
+import ExpandClicked from '../assets/icons/expand_clicked.svg';
+
+// Collapse
+import CollapseNormal from '../assets/icons/collapse_normal.svg';
+import CollapseHover from '../assets/icons/collapse_hover.svg';
+import CollapseClicked from '../assets/icons/collapse_clicked.svg';
+
+// Add
+import AddNormal from '../assets/icons/add_normal.svg';
+import AddHover from '../assets/icons/add_hover.svg';
+import AddClicked from '../assets/icons/add_clicked.svg';
+
 interface IconMapping {
     normal?: string;
     normal_hover?: string;
@@ -192,6 +213,38 @@ export const iconMappings: Record<string, IconMapping> = {
         click: SearchClicked,
         click_hover: undefined,
         title: undefined,
+        altTitle: undefined
+    },
+    library: {
+        normal: LibraryNormal,
+        normal_hover: LibraryHover,
+        click: LibraryClicked,
+        click_hover: LibraryClickedHover,
+        title: undefined,
+        altTitle: undefined
+    },
+    expand: {
+        normal: ExpandNormal,
+        normal_hover: ExpandHover,
+        click: ExpandClicked,
+        click_hover: undefined,
+        title: "Show More",
+        altTitle: undefined
+    },
+    collapse: {
+        normal: CollapseNormal,
+        normal_hover: CollapseHover,
+        click: CollapseClicked,
+        click_hover: undefined,
+        title: "Show Less",
+        altTitle: undefined
+    },
+    add: {
+        normal: AddNormal,
+        normal_hover: AddHover,
+        click: AddClicked,
+        click_hover: undefined,
+        title: "Create Playlist or Folder",
         altTitle: undefined
     }
 };
