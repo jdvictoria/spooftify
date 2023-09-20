@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 
 import styled from "styled-components";
+import {FilterIcon} from "../../atoms/filter_buttons";
 import {NavigationIcon} from "../../atoms/nav_buttons";
 
 const NavBigCard = styled.div`
@@ -23,6 +24,7 @@ const NavBigCard = styled.div`
 const UpperDiv = styled.div`
   display: flex;
   position: relative;
+  flex-direction: column;
   
   height: 21.5%;
   width: 97.5%;
@@ -33,6 +35,41 @@ const UpperDiv = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+const DivGrid = styled.div`
+  display: flex;
+  flex-direction: row;
+  
+  height: 50%;
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+`
+
+const LeftUpper = styled.div`
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+
+  left: 0;
+  height: 50%;
+
+  justify-content: center;
+  align-items: center;
+`
+
+const RightUpper = styled.div`
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+
+  right: 17.5px;
+  height: 50%;
+
+  justify-content: center;
+  align-items: center;
+`
 
 const LowerDiv = styled.div`
   background-color: red;
@@ -76,10 +113,6 @@ export function BigCard(){
         }, 250);
     };
 
-    const handlePlusClick = () => {
-
-    }
-
     const handleArrowClick = () => {
         if(arrowButton === 'expand') {
             setTimeout(() => {
@@ -95,24 +128,33 @@ export function BigCard(){
     return(
         <NavBigCard>
             <UpperDiv>
-                <NavigationIcon
-                    meta="library"
-                    active={activeButton === 'library'}
-                    onClick={() => handleButtonClick('library')}
-                    plain={false}
-                />
-                <NavigationIcon
-                    meta='add'
-                    active={activeButton === 'add'}
-                    onClick={() => handleButtonClick('add')}
-                    plain={true}
-                />
-                <NavigationIcon
-                    meta={arrowButton}
-                    active={activeButton === arrowButton}
-                    onClick={handleArrowClick}
-                    plain={true}
-                />
+                <DivGrid>
+                    <LeftUpper>
+                        <NavigationIcon
+                            meta="library"
+                            active={activeButton === 'library'}
+                            onClick={() => handleButtonClick('library')}
+                            plain={false}
+                        />
+                    </LeftUpper>
+                    <RightUpper>
+                        <NavigationIcon
+                            meta='add'
+                            active={activeButton === 'add'}
+                            onClick={() => handleButtonClick('add')}
+                            plain={true}
+                        />
+                        <NavigationIcon
+                            meta={arrowButton}
+                            active={activeButton === arrowButton}
+                            onClick={handleArrowClick}
+                            plain={true}
+                        />
+                    </RightUpper>
+                </DivGrid>
+                <DivGrid>
+                    <FilterIcon meta='Playlist'/>
+                </DivGrid>
             </UpperDiv>
             <LowerDiv>
 
