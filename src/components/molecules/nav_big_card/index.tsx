@@ -43,7 +43,7 @@ const DivGrid = styled.div`
   height: 50%;
   width: 100%;
 
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 `
 
@@ -153,7 +153,8 @@ export function BigCard(){
                     </RightUpper>
                 </DivGrid>
                 <DivGrid>
-                    <FilterIcon meta='Playlist'/>
+                    <FilterIcon meta='playlists'/>
+                    <FilterIcon meta='artists'/>
                 </DivGrid>
             </UpperDiv>
             <LowerDiv>

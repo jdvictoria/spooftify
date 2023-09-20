@@ -32,7 +32,9 @@ const StyledText = styled.span`
   font-size: 15px;
   font-weight: bold;
   font-family: "Circular Bold" , sans-serif;
+  
   letter-spacing: .5px;
+  
   justify-content: center;
   align-items: center;
 `;

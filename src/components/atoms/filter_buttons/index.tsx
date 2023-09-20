@@ -1,40 +1,56 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import styled from "styled-components";
 
-const StyledContainer = styled.div`
+const StyledButton = styled.div`
   display: flex;
-  flex-direction: row;
   
-  width: 100%;
-  height: 27.5px;
-  
-  margin-top: 10px;
-  margin-bottom: 10px;
-  
-  justify-content: flex-start;
-  align-items: center;
-`;
+  height: 32.5px;
+  width: 72.5px;
 
-const StyledButton = styled.img`
-  height: 25px;
-  width: 25px;
-
-  margin: 10px 20px 10px 20px;
+  margin: 2.5px 2.5px 7.5px 10px;
   
   justify-content: center;
   align-items: center;
   
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: #222222;
 `;
 
-export function FilterIcon(props: {meta: string}){
-    return(
-        <StyledContainer>
-            <StyledButton>
+const StyledText = styled.span`
+  font-size: 13px;
+  font-family: "Circular Book" , sans-serif;
+  
+  color: white;
+  letter-spacing: .5px;
+  
+  justify-content: center;
+  align-items: center;
+`;
 
-            </StyledButton>
-        </StyledContainer>
+function toTitleCase(text: string) {
+    return text
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+}
+
+export function FilterIcon(props: {meta: string}){
+    const [isHovered, setIsHovered] = useState(false);
+
+    const textSource = toTitleCase(props.meta);
+
+    return(
+        <StyledButton
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            style={{
+                backgroundColor: isHovered ? '#2A2A2A' : '#222222',
+            }}
+        >
+            <StyledText>
+                {textSource}
+            </StyledText>
+        </StyledButton>
     )
 }
